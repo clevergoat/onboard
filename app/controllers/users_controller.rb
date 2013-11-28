@@ -13,8 +13,8 @@ class UsersController < ApplicationController
   		flash[:success] = "You've successfully signed up!"
 
   		# tell the browser using a cookie that i am this user
-  		session[:user_id] = @user.user_id
-  		
+  		session[:user_id] = @user.id
+
   		redirect_to root_path
   	else
   		render :new
