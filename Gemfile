@@ -51,3 +51,9 @@ gem 'simple_form'
 # Heroku Gems:
 # because Heroku asks for this gem, we're going to install it
 gem 'rails_12factor', group: :production
+
+# Lets add in Omniauth
+gem "omniauth"
+gem "omniauth-facebook"
+gem "omniauth-twitter"
+gem "omniauth-linkedin"
