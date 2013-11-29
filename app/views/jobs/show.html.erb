@@ -18,7 +18,7 @@
 			
 			<blockquote><%= @job.company_tagline %></blockquote>
 
-			<p><%= @job.description %></p>
+			<%= md @job.description %>
 
 			<p>
 				Salary: <%= @job.salary %><br />
