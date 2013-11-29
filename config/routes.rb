@@ -1,7 +1,5 @@
 Onboard::Application.routes.draw do
 
-  get "submissions/new"
-  get "submissions/show"
   # to fit in with omniauth's callback urls
   get "/auth/:provider/callback" => "social_logins#create"
 
@@ -14,6 +12,7 @@ Onboard::Application.routes.draw do
   resources :users
   resources :jobs do
     resources :submissions
+    resource :payment
   end
 
 

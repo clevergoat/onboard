@@ -60,3 +60,6 @@ gem "omniauth-linkedin"
 
 # RDiscount
 gem "rdiscount"
+
+# for Stripe payments
+gem "stripe"

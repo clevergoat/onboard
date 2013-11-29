@@ -40,6 +40,7 @@
 		<div class="ten columns offset-by-one">
 			<%= link_to "Apply", new_job_submission_path(@job), class: "button" %>
 			<% if current_user.present? and current_user == @job.user %>
+				<%= link_to "Feature this job", new_job_payment_path(@job), class: "button" %>
 				<%= link_to "Edit", edit_job_path(@job), class: "button" %>
 				<%= link_to "Delete", job_path(@job), method: :delete, class: "button", confirm: "Are you sure?" %>
 			<% end %>
