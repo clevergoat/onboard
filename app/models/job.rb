@@ -12,6 +12,7 @@ class Job < ActiveRecord::Base
 	geocoded_by :location
 	after_validation :geocode
 
+	has_attached_file :company_logo, styles: { large: "300x300#", medium: "100x100#" }
 end
 
 

@@ -7,7 +7,9 @@
 
           <%= link_to job_path(job) do %>
 
-            <%# image_tag job.company_logo.url, class: "company_logo" %>
+            <% if job.company_logo.present? %>
+              <%= image_tag job.company_logo(:medium), class: "company_logo" %>
+            <% end %>
 
             <div class="job_details <% if job.stripe_token.present? %> featured<% end %>">
               <h3><%= job.title %></h3>
