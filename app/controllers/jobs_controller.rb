@@ -6,7 +6,7 @@ class JobsController < ApplicationController
 
 
   def index
-    @jobs = Job.all
+    @jobs = Job.order("stripe_token asc, created_at desc")
     # if i wanted to find all of my jobs
     # it would be :
     # @jobs = current_user.jobs.all
