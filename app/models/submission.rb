@@ -5,4 +5,7 @@ class Submission < ActiveRecord::Base
 
 	validates :cover_letter, presence: true
 
+	# from paperclip
+	has_attached_file :cv
+
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131129124314) do
+ActiveRecord::Schema.define(version: 20131129165658) do
 
   create_table "jobs", force: true do |t|
     t.string   "title"
@@ -28,6 +28,11 @@ ActiveRecord::Schema.define(version: 20131129124314) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "stripe_token"
+    t.string   "company_logo_file_name"
+    t.string   "company_logo_content_type"
+    t.integer  "company_logo_file_size"
+    t.datetime "company_logo_updated_at"
   end
 
   create_table "submissions", force: true do |t|
@@ -36,6 +41,10 @@ ActiveRecord::Schema.define(version: 20131129124314) do
     t.integer  "job_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "cv_file_name"
+    t.string   "cv_content_type"
+    t.integer  "cv_file_size"
+    t.datetime "cv_updated_at"
   end
 
   create_table "users", force: true do |t|

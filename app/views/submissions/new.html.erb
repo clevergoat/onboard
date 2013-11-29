@@ -3,6 +3,7 @@
 	<%= simple_form_for [@job, @submission] do |f| %>
 
 		<%= f.input :cover_letter, input_html: { rows: 12 } %>
+		<%= f.input :cv, label: "Upload CV" %>
 
 		<%= f.button :submit, "Apply" %>
 

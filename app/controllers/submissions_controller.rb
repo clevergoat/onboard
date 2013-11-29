@@ -28,7 +28,7 @@ class SubmissionsController < ApplicationController
 
 
   def submission_params
-  	params.require(:submission).permit(:cover_letter)
+  	params.require(:submission).permit(:cover_letter, :cv)
   end
 
 

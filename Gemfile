@@ -63,3 +63,7 @@ gem "rdiscount"
 
 # for Stripe payments
 gem "stripe"
+
+# add images and attachments to the site
+gem "paperclip"
+gem "aws-sdk"
