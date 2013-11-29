@@ -13,13 +13,22 @@ class PaymentsController < ApplicationController
   	@job.stripe_token = params[:payment][:token]
 
   	if @job.save
+
+  		# ONE OFF CHARGE
   		# charge this card
-  		Stripe::Charge.create(
-  			amount: 100, 
-  			currency: "gbp", 
+  		 Stripe::Charge.create(
+  		 	amount: 100, 
+  		 	currency: "gbp", 
   			card: @job.stripe_token, 
-  			description: "Job id: #{@job.id}"
-  			)
+  		 	description: "Job id: #{@job.id}"
+  		 	)
+
+		# # SUBSCRIPTION
+		# Stripe::Customer.create(
+		# 	card: @job.stripe_token,
+		# 	description: "Job id: #{@job.id}"
+		# 	plan: "gold"
+		# 	)
 
   		flash[:success] = "Your job is now featured"
 
