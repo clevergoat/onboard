@@ -37,14 +37,31 @@
 	</div>
 
 	<div class="row">
-
-		<a href="#" class="button">Apply</a>
-
-		<% if current_user.present? and current_user == @job.user %>
-			<%= link_to "Edit", edit_job_path(@job), class: "button" %>
-			<%= link_to "Delete", job_path(@job), method: :delete, class: "button", confirm: "Are you sure?" %>
-		<% end %>
-
+		<div class="ten columns offset-by-one">
+			<%= link_to "Apply", new_job_submission_path(@job), class: "button" %>
+			<% if current_user.present? and current_user == @job.user %>
+				<%= link_to "Edit", edit_job_path(@job), class: "button" %>
+				<%= link_to "Delete", job_path(@job), method: :delete, class: "button", confirm: "Are you sure?" %>
+			<% end %>
+		</div>
 	</div>
+
+	<% if current_user.present? and current_user == @job.user %>
+		<div class="row">
+			<div class="six columns offset-by-three">
+				<h3>Submissions for this job</h3>
+
+				<ul>
+					<% @job.submissions.each do |s| %>
+						<li>
+							<%= link_to s.user.name, job_submission_path(@job, s) %>
+						</li>
+					<% end %>
+				</ul>
+				
+			</div>
+		</div>
+	<% end %>
+
 
 </div>

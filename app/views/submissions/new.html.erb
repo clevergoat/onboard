@@ -1,0 +1,11 @@
+<div class="six columns offset-by-three">
+
+	<%= simple_form_for [@job, @submission] do |f| %>
+
+		<%= f.input :cover_letter, input_html: { rows: 12 } %>
+
+		<%= f.button :submit, "Apply" %>
+
+	<% end %>
+
+</div>
